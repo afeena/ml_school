@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+      <itemPath>C:/Users/Evgeniya/develop/ImgClassifier/boost</itemPath>
+      <itemPath>C:/Users/Evgeniya/develop/ImgClassifier/indices</itemPath>
+      <itemPath>C:/Users/Evgeniya/develop/ImgClassifier/train.py</itemPath>
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>DB.cpp</itemPath>
+      <itemPath>DB.h</itemPath>
+      <itemPath>IO.cpp</itemPath>
+      <itemPath>IO.h</itemPath>
+      <itemPath>csv.h</itemPath>
+      <itemPath>main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject|build|test|tests|images)$</sourceFolderFilter>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <standard>8</standard>
+          <incDir>
+            <pElem>../../../../MinGW/src/opencv-3.1.0/build/install/include</pElem>
+            <pElem>../../../../MinGW/src/xgboost/include</pElem>
+            <pElem>../../../../MinGW/src/xgboost/dmlc-core/include</pElem>
+            <pElem>../../../../MinGW/src/xgboost/rabit/include</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <linkerAddLib>
+            <pElem>../../../../MinGW/src/opencv-3.1.0/build/install/x64/mingw/staticlib</pElem>
+            <pElem>../../../../MinGW/src/xgboost/lib</pElem>
+          </linkerAddLib>
+          <linkerLibItems>
+            <linkerLibLibItem>opencv_world310</linkerLibLibItem>
+            <linkerLibLibItem>IlmImf</linkerLibLibItem>
+            <linkerLibLibItem>libjasper</linkerLibLibItem>
+            <linkerLibLibItem>libjpeg</linkerLibLibItem>
+            <linkerLibLibItem>libpng</linkerLibLibItem>
+            <linkerLibLibItem>libtiff</linkerLibLibItem>
+            <linkerLibLibItem>libwebp</linkerLibLibItem>
+            <linkerLibLibItem>zlib</linkerLibLibItem>
+            <linkerLibLibItem>xgboost</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="C:/Users/Evgeniya/develop/ImgClassifier/boost"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Users/Evgeniya/develop/ImgClassifier/indices"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Users/Evgeniya/develop/ImgClassifier/train.py"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="DB.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DB.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="IO.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="IO.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="csv.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <standard>8</standard>
+          <incDir>
+            <pElem>../../../../MinGW/src/opencv-3.1.0/build/install/include</pElem>
+            <pElem>../../../../MinGW/src/xgboost/include</pElem>
+            <pElem>../../../../MinGW/src/xgboost/dmlc-core/include</pElem>
+            <pElem>../../../../MinGW/src/xgboost/rabit/include</pElem>
+          </incDir>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <linkerTool>
+          <linkerAddLib>
+            <pElem>../../../../MinGW/src/opencv-3.1.0/build/install/x64/mingw/staticlib</pElem>
+            <pElem>../../../../MinGW/src/xgboost/lib</pElem>
+          </linkerAddLib>
+          <linkerLibItems>
+            <linkerLibLibItem>opencv_world310</linkerLibLibItem>
+            <linkerLibLibItem>IlmImf</linkerLibLibItem>
+            <linkerLibLibItem>libjasper</linkerLibLibItem>
+            <linkerLibLibItem>libjpeg</linkerLibLibItem>
+            <linkerLibLibItem>libpng</linkerLibLibItem>
+            <linkerLibLibItem>libtiff</linkerLibLibItem>
+            <linkerLibLibItem>libwebp</linkerLibLibItem>
+            <linkerLibLibItem>zlib</linkerLibLibItem>
+            <linkerLibLibItem>xgboost</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="C:/Users/Evgeniya/develop/ImgClassifier/boost"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Users/Evgeniya/develop/ImgClassifier/indices"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Users/Evgeniya/develop/ImgClassifier/train.py"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="DB.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DB.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="IO.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="IO.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="csv.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+    <conf name="remote_debug" type="1">
+      <toolsSet>
+        <compilerSet>GNU|GNU</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <standard>8</standard>
+          <incDir>
+            <pElem>/usr/include/mysql</pElem>
+            <pElem>/home/mlstudent1/xgboost/include</pElem>
+            <pElem>/home/mlstudent1/xgboost/rabit/include</pElem>
+            <pElem>/home/mlstudent1/xgboost/dmlc-core/include</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <linkerAddLib>
+            <pElem>/home/mlstudent1/xgboost/lib</pElem>
+          </linkerAddLib>
+          <linkerLibItems>
+            <linkerLibLibItem>opencv_core</linkerLibLibItem>
+            <linkerLibLibItem>opencv_imgproc</linkerLibLibItem>
+            <linkerLibLibItem>opencv_highgui</linkerLibLibItem>
+            <linkerLibLibItem>opencv_features2d</linkerLibLibItem>
+            <linkerLibLibItem>opencv_imgcodecs</linkerLibLibItem>
+            <linkerLibLibItem>opencv_ml</linkerLibLibItem>
+            <linkerLibLibItem>opencv_objdetect</linkerLibLibItem>
+            <linkerLibLibItem>mysqlpp</linkerLibLibItem>
+            <linkerLibLibItem>xgboost</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="C:/Users/Evgeniya/develop/ImgClassifier/boost"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Users/Evgeniya/develop/ImgClassifier/indices"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Users/Evgeniya/develop/ImgClassifier/train.py"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="DB.cpp" ex="false" tool="1" flavor2="8">
+      </item>
+      <item path="DB.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="IO.cpp" ex="false" tool="1" flavor2="8">
+      </item>
+      <item path="IO.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="csv.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="8">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

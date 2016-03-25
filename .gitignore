@@ -1,0 +1,5 @@
+ImageCalssification/ImgClassifier/nbproject/private/
+*.bash
+*.mk
+TextAnalyze/WordSimilarity/nbproject/private/
+TextAnalyze/word2vec/nbproject/private/
