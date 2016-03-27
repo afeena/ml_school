@@ -1,59 +1,51 @@
 import  pandas as pd
 import numpy as np
 import xgboost as xgb
-from sklearn.preprocessing import Imputer
 from sklearn import ensemble
-
-def extract_features(data):
-    for(feature_name, feature_ser) in data.iteritems():
-        if feature_ser.dtype == 'O':
-            data[feature_name], tmp_index = pd.factorize(data[feature_name])
-
-
-    return data.values
-
+from sklearn import preprocessing
 
 train_data = pd.read_csv('train.csv')
-labels = train_data['target'].values
-features = extract_features(train_data.drop(['ID','target'], axis=1))
+labels = train_data['target']
 
 test_data = pd.read_csv('test.csv')
 id = test_data['ID']
 
+train_features = train_data.drop(['ID','target'], axis=1)
+test_features = test_data.drop(['ID'], axis=1)
+for(train_name, train_ser), (test_name,test_ser) in zip(train_features.iteritems(),test_features.iteritems()):
+        if train_ser.dtype == 'O':
+            train_features[train_name], tmp_indexer = pd.factorize(train_features[train_name])
+            test_features[test_name] = tmp_indexer.get_indexer(test_features[test_name])
 
 
-imp = Imputer(missing_values='NaN', strategy='median')
-imp_fetures = imp.fit_transform(features)
-
-model_tmp = ensemble.RandomForestClassifier(n_estimators=2000, n_jobs=-1).fit(imp_fetures, labels)
-indices = np.argsort(model_tmp.feature_importances_)[::-1]
-indices = indices[:70]
-X = imp_fetures[:, indices]
-
-np.savetxt('features',X);
-DX = xgb.DMatrix(X, label=labels)
+imp = preprocessing.Imputer(missing_values='NaN',strategy='mean')
+train_features = imp.fit_transform(train_features)
+clf = ensemble.RandomForestClassifier(n_estimators=1500,n_jobs=4).fit(train_features,labels)
+indices = np.argsort(clf.feature_importances_)[::-1]
+indices = indices[:50]
+DX = xgb.DMatrix(train_features[:,indices], label=labels, missing=float('NaN'))
 params = {'booster':'gbtree',
-     'max_depth':10,
-     'eta':0.03,
+     'max_depth':7,
+     'eta':0.02,
      'silent':1,
      'objective':'binary:logistic',
      'nthread':4,
-      'subsample': 0.7,
-      'colsample_bytree': 0.9,
+      'subsample': 0.75,
+      'colsample_bytree': 0.7,
      'eval_metric':'logloss'
      }
 
-xgb.cv(params=params, dtrain=DX, show_progress=True, nfold=5, num_boost_round=700)
+xgb.cv(params=params, dtrain=DX, show_progress=True, nfold=5, num_boost_round=1500)
 
 bst = xgb.Booster(params, [DX])
-for i in range(700):
+for i in range(1500):
     bst.update(DX, i)
     print("iteration: ", i)
 
-bst.save_model('boost')
+bst.save_model('boost1')
 
-
-preds = bst.predict(xgb.DMatrix(imp.fit_transform(extract_features(test_data.drop(['ID'], axis=1)))[:,indices]))
+test_features = imp.fit_transform(test_features)[:,indices]
+preds = bst.predict(xgb.DMatrix(test_features,missing=float('NaN')))
 
 d = {'ID': id, 'PredictedProb':preds}
 
