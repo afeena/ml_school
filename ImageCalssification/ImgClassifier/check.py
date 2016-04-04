@@ -53,8 +53,8 @@ test_data['image_label'] = preds
 test_data.to_csv(root_path + '/res.csv', index=False)
 
 server = "localhost"
-user = "mlstudent1"
-password = "b3e462d2b0"
+user = "user"
+password = "password"
 
 conn = pymysql.connect(server, user, password, "mlschool")
 cursor = conn.cursor()
